@@ -14,11 +14,10 @@ export class EventsGateway {
   @WebSocketServer()
   server: Server;
 
-  @SubscribeMessage('events')
+  @SubscribeMessage('payment-notifications')
   findAll(@MessageBody() data: any): Observable<WsResponse<number>> {
     return from([1, 2, 3]).pipe(
       map((item) => ({ event: 'events', data: item })),
     );
   }
-
 }
