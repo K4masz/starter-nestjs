@@ -7,6 +7,6 @@ export class AppController {
 
   @Post('/webhook')
   getHello(@Body() data): string {
-    return this.appService.getHello();
+    return data;
   }
 }
